@@ -36,17 +36,25 @@ public class Practice01AfterOnDrawView extends AppCompatImageView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        //onDraw之前  是在绘制背景前
+        //  之后  是在绘制主体内容之后
+
         // 在 super.onDraw() 的下方插入绘制代码，让绘制内容盖住原主体内容
         // 由于这期的重点是绘制代码的位置而不是绘制代码本身，所以直接给出绘制代码，你只要解除注释就好
         // 爽吧？
 
-        /*Drawable drawable = getDrawable();
+        Drawable drawable = getDrawable();
         if (drawable != null) {
             canvas.save();
             canvas.concat(getImageMatrix());
             Rect bounds = drawable.getBounds();
             canvas.drawText(getResources().getString(R.string.image_size, bounds.width(), bounds.height()), 20, 40, paint);
             canvas.restore();
-        }*/
+        }
+    }
+
+    @Override
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
     }
 }

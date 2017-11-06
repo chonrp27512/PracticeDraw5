@@ -32,7 +32,7 @@ public class Practice02BeforeOnDrawView extends AppCompatTextView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+//        super.onDraw(canvas);
 
         // 把下面的绘制代码移到 super.onDraw() 的上面，就可以让原主体内容盖住你的绘制代码了
         // （或者你也可以把 super.onDraw() 移到这段代码的下面）
@@ -47,5 +47,16 @@ public class Practice02BeforeOnDrawView extends AppCompatTextView {
         bounds.top = layout.getLineTop(layout.getLineCount() - 3);
         bounds.bottom = layout.getLineBottom(layout.getLineCount() - 3);
         canvas.drawRect(bounds, paint);
+
+        canvas.save();
+        bounds.left=layout.getLineLeft(0);
+        bounds.top=layout.getLineTop(0);
+        bounds.right=layout.getLineRight(0);
+        bounds.bottom=layout.getLineBottom(0);
+        paint.setColor(Color.RED);
+        canvas.drawRect(bounds,paint);
+        canvas.restore();
+
+        super.onDraw(canvas);
     }
 }
