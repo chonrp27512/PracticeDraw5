@@ -50,7 +50,7 @@ public class Practice03OnDrawLayout extends LinearLayout {
             spots[2] = new Practice03OnDrawLayout.Pattern.Spot(0.32f, 0.6f, 0.067f);
             spots[3] = new Practice03OnDrawLayout.Pattern.Spot(0.62f, 0.78f, 0.083f);
 
-            spots[4] = new Practice03OnDrawLayout.Pattern.Spot(0.5f, 0.5f, 0.5f);
+            spots[4] = new Practice03OnDrawLayout.Pattern.Spot(0.5f, 0.5f, 0.05f);
         }
 
         private Pattern(Practice03OnDrawLayout.Pattern.Spot[] spots) {
